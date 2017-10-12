@@ -1,0 +1,55 @@
+{
+  "name": "vue-head-mixin",
+  "version": "0.1.0-dev",
+  "description": "A Vue mixin to manage document title and meta tags. Works on both client and server side.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenivana/vue-head-mixin.git"
+  },
+  "keywords": [
+    "vue",
+    "head",
+    "meta",
+    "mixin"
+  ],
+  "author": "Jiang Fengming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fenivana/vue-head-mixin/issues"
+  },
+  "homepage": "https://github.com/fenivana/vue-head-mixin#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-enough": "^0.2.8"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "loose": true,
+          "modules": "umd"
+        }
+      ],
+      "stage-2"
+    ],
+    "plugins": [
+      "add-module-exports"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "enough",
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}
