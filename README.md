@@ -6,7 +6,6 @@ A Vue mixin to manage document title and meta tags. Works on both client and ser
 
 ```js
 import vueHeadMixin from 'vue-head-mixin'
-import { getArticle } from './api'
 
 const headMixin = vueHeadMixin({
   titleTemplate: '%s - Your Company Name'
@@ -17,23 +16,26 @@ export default {
 
   props: ['id'],
 
+  asyncData({ store, route }) {
+    return store.dispatch('fetchArticle', route.params.id)
+  },
+
   async created() {
-    const article = getArticle(this.id)
-    this.setDocumentTitle(article.title)
+    this.setDocumentTitle(this.$store.state.article.title)
     this.setDocumentMeta([
       {
         name: 'author',
-        content: article.author
+        content: this.$store.state.article.author
       },
 
       {
         name: 'description',
-        content: article.description
+        content: this.$store.state.article.description
       },
 
       {
         name: 'keywords',
-        content: article.keywords
+        content: this.$store.state.article.keywords
       }
     ])
   }
