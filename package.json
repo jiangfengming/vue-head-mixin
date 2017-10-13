@@ -1,6 +1,6 @@
 {
   "name": "vue-head-mixin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Vue mixin to manage document title and meta tags. Works on both client and server side.",
   "main": "dist/VueHeadMixin.js",
   "scripts": {

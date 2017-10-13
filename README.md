@@ -40,7 +40,7 @@ export default {
 }
 ```
 
-If you use ssr, you need to inject title and meta into html template:
+If you use SSR, you need to inject the title and meta into html template:
 
 ```html
 <!DOCTYPE html>
@@ -57,6 +57,19 @@ If you use ssr, you need to inject title and meta into html template:
 </html>
 ```
 
+And make sure set the default values in SSR context:
+
+```js
+const context = {
+  url: ctx.url,
+  title: '',
+  meta: ''
+}
+
+renderer.renderToString(context, (err, html) => {
+  // ...
+}
+```
 
 ## APIs
 
