@@ -14,6 +14,9 @@ const headMixin = vueHeadMixin({
 export default {
   mixins: [headMixin],
 
+  // Set a static title
+  title: 'Static Page Title',
+
   props: ['id'],
 
   asyncData({ store, route }) {
@@ -22,6 +25,7 @@ export default {
 
   async created() {
     this.setDocumentTitle(this.$store.state.article.title)
+
     this.setDocumentMeta([
       {
         name: 'author',
